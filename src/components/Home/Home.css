@@ -1,0 +1,35 @@
+
+  img {
+  max-width: 300px;
+  max-height: 300px;
+
+  }
+
+ .headerClass {
+    height: 100%;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 2px ;
+     flex-direction: column;
+     
+       }
+  
+       
+       .items {
+        max-width: 1500px;
+        max-height: 1500px;
+      
+        }
+      
+       .carousel {
+          height: 100%;
+           width: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column; 
+          
+           
+       }

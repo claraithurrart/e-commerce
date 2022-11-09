@@ -1,0 +1,19 @@
+
+ ul {
+
+    text-align: center;
+    width:100%;
+    padding:5px 10px; 
+  }
+   
+   li{
+    font-size: medium;
+    float:center;
+    width:100%;
+    }  
+
+    .carrito{
+      max-width: 10% !important;
+   
+
+    }
