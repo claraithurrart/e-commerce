@@ -1,41 +1,40 @@
  import React from 'react'
- import {useReducer} from 'react'
-//  import {TYPES} from '..Actions/ShoppingActions'
-//  import {ShoppingCartInitialState, ShoppingReducers} from '../Reducers/ShoppingReducers'
  import './ShoppingCart.css'
+ import { ShopContext } from '../Context/ShopContext';
+ import { useContext } from 'react';
 
  function ShoppingCart(){
   
-    //  const [state, dispatch]= useReducer(ShoppingReducers, ShoppingCartInitialState);
-//        console.log (state)
+     const context= useContext(ShopContext);
+       console.log (context)
 
-//     function addToCart(id){
-//       dispatch ({type: TYPES.ADD_TO_CART , payload: id})
-//     }
+    // function addToCart(id){
+    //   dispatch ({type: TYPES.ADD_TO_CART , payload: id})
+    // }
 
     // function deleteToCart(id){
     //     dispatch ({type: TYPES.REMOVE_ONE_FROM_CART , payload: id})
     //   }
 
-//       function clearToCart(id){
-//         dispatch ({type: TYPES.CLEAR_CART })
-//       }
+    //   function clearToCart(id){
+    //     dispatch ({type: TYPES.CLEAR_CART })
+    //   }
 
     return (
+      <ShopContext.Consumer>
         <>
-        <h1>Productos</h1>
-//         <article className='box'> <h3>Mi lista posible a agregar</h3></article>
-//         <article className='box'> 
-{/* //         {state.products.map((p) =>{ */}
-{/* //         return (<div> <p> {p.name} </p>
-//         <button onClick={() => addToCart(p.id) }> Agregar</button> </div>) */}
-         {/* })
-         } */}
-        
-
-      </article>
+        <h1>Carrito</h1>
+       
+        {context.cart.map((p) =>{ 
+         return (<div> <p> {p.newItem.name} </p>
+                <p>Cantidad: {p.quantity}</p>
+               <button onClick={() => context.removeProductFromCart(p.newItem.id)}> Eliminar </button>
+               </div>
+           
+            );
+          })}
+ 
     </>
-    )
-}
-
-  export default ShoppingCart
+    </ShopContext.Consumer>
+      )  } 
+  export default ShoppingCart;
