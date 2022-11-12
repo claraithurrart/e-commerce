@@ -1,12 +1,13 @@
  import React from 'react'
  import './ShoppingCart.css'
- import { ShopContext } from '../Context/ShopContext';
+import { ShopContext } from '../Context/ShopContext';
  import { useContext } from 'react';
+import ShoppingReducers from '../Reducers/ShoppingReducers'
 
  function ShoppingCart(){
   
      const context= useContext(ShopContext);
-       console.log (context)
+       console.log (context.cart)
 
     // function addToCart(id){
     //   dispatch ({type: TYPES.ADD_TO_CART , payload: id})
@@ -21,20 +22,24 @@
     //   }
 
     return (
-      <ShopContext.Consumer>
+      
         <>
-        <h1>Carrito</h1>
+        <h1 className='title'>CARRITO</h1>
        
         {context.cart.map((p) =>{ 
          return (<div> <p> {p.newItem.name} </p>
                 <p>Cantidad: {p.quantity}</p>
+                <p>Precio: {p.newItem.precio}</p>
+                <img src= {p.newItem.image}></img>
+          
                <button onClick={() => context.removeProductFromCart(p.newItem.id)}> Eliminar </button>
+
                </div>
            
             );
           })}
  
     </>
-    </ShopContext.Consumer>
+   
       )  } 
   export default ShoppingCart;

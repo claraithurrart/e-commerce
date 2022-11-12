@@ -21,9 +21,11 @@ function Item (){
 
 return (
     <>
-   {product ? ( <div> <h1>Detalle del producto  </h1>
+   {product ? ( <div> <h1 className="title">DETALLE DEL PRODUCTO </h1>
      <p> {product.name} </p>
      <img src= {product.image}></img>
+     <p> {product.detalle} </p>
+     <p> {product.precio} </p>
      </div>
      ) : ( <div> Cargando...</div>)
     }

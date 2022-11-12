@@ -17,14 +17,18 @@ export  function ShoppingReducers(state, action){
     case TYPES.ADD_TO_CART:  {
      
       let newItem = data.find(x => x.id === action.product.id)
+
+      //vemos si el item ya se encuentra en el carrito
       let itemCart = state.cart.find (x => x.id === action.product.id)
 
       return itemCart ? {
+        //si està en el carrito, se suma la cantidad y se calcula el total
         ...state,
        cart: state.cart.map ((item) =>item.id === newItem.id 
-       ? {...item, quantity: item.quantity +1, total: item.total + newItem.precio} : item
+       ? {...item, quantity: item.quantity +1, total: item.precio * item.quantity} : item
        ),
       }:{
+        //si no està en el carrito, el total el precio y la cantidad es uno.
         ...state, 
         cart: [...state.cart, {newItem, quantity:1,  total: newItem.precio}]
       }

@@ -23,7 +23,7 @@ function GlobalState (props) {
   
    return (
     <ShopContext.Provider
-    values = {{
+    value = {{
       products:products,
       cart: cartState.cart, 
       addProductToCart:addProductToCart,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardContent, CardDescription, CardHeader, Image, Button } from 'semantic-ui-react'
 import './Catalogo.css'
-import { ShopContext } from '../Context/ShopContext'
+import {ShopContext} from '../Context/ShopContext'
 import {Link} from 'react-router-dom'
 
 import {useState, useReducer} from 'react'
@@ -17,7 +17,7 @@ function Catalogo() {
 
         return (
             <>
-            <ShoppingCart.Consumer>
+            <ShopContext.Consumer>
                 {context =>(
                    <>
             <h1 className='title'> CATALOGO </h1>
@@ -27,11 +27,15 @@ function Catalogo() {
                        
                        <Card className='conteiner'>
                         <Link to={`/item/${p.id}`}>
-                        <Image  src={p.image}/>
+                        <Image className='imagen' src={p.image}/>
                         </Link>
                        <CardContent>
                         <CardHeader> {p.name}</CardHeader>
+                        <Link to={`/item/${p.id}`}>
+                        <CardDescription>ver detalle</CardDescription>
+                        </Link>
                         <CardDescription>{p.precio}</CardDescription>
+                        <br></br>
                         <Button  onClick={() => context.addProductToCart(p) } className="btn btn-primary" variant= "primary"> AGREGAR AL CARRITO</Button> 
                        </CardContent>
                        </Card>
@@ -42,7 +46,7 @@ function Catalogo() {
             </div>
             </>
                 )}
-            </ShoppingCart.Consumer>
+            </ShopContext.Consumer>
             </>
         )
       }

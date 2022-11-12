@@ -6,19 +6,18 @@
 
 }
 
+.imagen {
+    width: 100%;
+}
 .catalogo{
-	margin: 2px;
+	 margin: 2px; 
     max-width: 100%;
     flex-wrap: wrap;
-    padding-right: 5%;
+    padding-right: 5%; 
 }
 
 .conteiner {
     display: flex;
-    /* justify-content: space-evenly; */
-    padding: 10px;
-    margin: 5px;
-   
 
 }
 
