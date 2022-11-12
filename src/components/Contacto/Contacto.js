@@ -5,6 +5,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Contacto.css'
 import { TextArea } from 'semantic-ui-react';
+import Navbar from '../Navegation/NavBar';
 
 function UserForm(){
     const [info, setInfo] = useState (null); 
@@ -23,6 +24,7 @@ function UserForm(){
 
     return(
         <>
+           <Navbar/>
          {info == null ? (
             <div> 
         <h1 className='title'>CONTACTO</h1>

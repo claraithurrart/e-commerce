@@ -1,7 +1,41 @@
+.divDetalle{
+    border: solid; 
+    border-radius:15px;
+   
+     width:40%;
+     margin-left:28%;
+
+}
+
 .title{
     font-size: x-large;
     max-width: 100%;
     padding: 2%;
-    text-align: center ;
+    text-align:center ;
+  
 
 }
+
+.name{
+    font-size:larger;
+   padding-top: 10px;
+   text-align:left ;
+   margin-left:25px;
+   font-weight: bold;
+}
+
+
+.dDetalle{
+    font-size:larger;
+   padding-top: 10px;
+   text-align:left ;
+   margin-left:25px;
+}
+
+.dPrecio{
+    font-size:larger;
+    padding-top: 10px;
+    text-align:left ;
+    margin-left:25px;
+}
+

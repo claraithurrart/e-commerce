@@ -10,6 +10,7 @@ import {useState, useReducer} from 'react'
 import {TYPES} from '../Actions/ShoppingActions'
 import {data} from '../assets/db/data'
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
+import Navbar from '../Navegation/NavBar'
 
 function Catalogo() {
   
@@ -17,6 +18,7 @@ function Catalogo() {
 
         return (
             <>
+            <Navbar/>
             <ShopContext.Consumer>
                 {context =>(
                    <>

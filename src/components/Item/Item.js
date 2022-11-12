@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
 import {data} from '../assets/db/data';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import'./Item.css'
+import Navbar from "../Navegation/NavBar";
 
 function Item (){
     const {id} = useParams();
@@ -21,11 +24,16 @@ function Item (){
 
 return (
     <>
+    <Navbar/>
    {product ? ( <div> <h1 className="title">DETALLE DEL PRODUCTO </h1>
-     <p> {product.name} </p>
-     <img src= {product.image}></img>
-     <p> {product.detalle} </p>
-     <p> {product.precio} </p>
+     <div className="divDetalle">
+     <p className="name"> {product.name} </p>
+     <img className="dImagen" src= {product.image}></img>
+ 
+     <p className="dDetalle" >Detalle: </p>
+     <p className="dDetalle"> {product.detalle} </p>
+     <p className="dPrecio">Precio:  {product.precio} </p>
+     </div> 
      </div>
      ) : ( <div> Cargando...</div>)
     }
